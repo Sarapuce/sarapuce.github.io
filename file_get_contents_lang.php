@@ -1,3 +1,3 @@
 <?php
-print(file_get_contents('./index.php'))
+print(base64_encode(file_get_contents('./index.php')));
  ?>
