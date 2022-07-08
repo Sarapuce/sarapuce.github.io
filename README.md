@@ -1,3 +1,3 @@
 # sarapuce.github.io
 
-Just a website to make some experiments with IndieAuth
+Just bunch of stuff I sometime needs for CTF
