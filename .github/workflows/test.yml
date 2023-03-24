@@ -1,7 +1,8 @@
 name: learn-github-actions
 on: [push]
 
-
+env:
+  DAY_OF_WEEK: 4
 
 jobs:
   check-bats-version:
@@ -10,6 +11,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ secrets.SuperSecret && ('1'+secrets.SuperSecret) || '' }}
+          node-version: ${{ env.DAY_OF_WEEK && ('1'+env.DAY_OF_WEEK) || '' }}
       - run: npm install -g bats
       - run: bats -v
